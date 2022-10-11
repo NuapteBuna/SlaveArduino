@@ -24,7 +24,8 @@ void COMMUNICATION::Begin(int baud_rate = 9600){
 void COMMUNICATION::Receive(){
     received = "";
     if(link.available()){
-        received = link.readString();
+        char c  = link.read();
+        Serial.println(c);
     }
 }
 

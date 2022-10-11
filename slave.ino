@@ -4,20 +4,9 @@
 void setup(){
     Serial.begin(9600);
     Com.Begin();
+    Serial.println("Started");
 }
 
-bool testing = false;
-
-
 void loop(){
-    Serial.println(Com.received);
-
-
     Com.Receive();
-    /*if(link.available()){
-        //Com.ReadBytes(mystring, 8);
-        
-        Serial.println(mystring);
-    }*/
-    delay(1000);
 }
