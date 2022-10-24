@@ -1,6 +1,6 @@
 #pragma once
 #include <SoftwareSerial.h>
-
+#include "motors.h"
 #define COM_PIN1 2
 #define COM_PIN2 3
 
@@ -25,7 +25,9 @@ void COMMUNICATION::Receive(){
     received = "";
     if(link.available()){
         char c  = link.read();
-        Serial.println(c);
+        if(c == 'q' || c == 'w' || c == 'e' || c == 'a' || c == 's' || c == 'd' || c == 'z' || c == 'x' || c == 'c' || c == 'h' || c == 'j'){
+            MOTORS::HandleRemote(c, 130);
+        }        
     }
 }
 
